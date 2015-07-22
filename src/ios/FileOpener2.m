@@ -46,8 +46,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         //NSLog(@"path %@, uti:%@", path, uti);
         NSURL *fileURL = nil;
 
+		NSString *pathAdapted = [path stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+		
         //fileURL = [NSURL URLWithString:path];
-        fileURL = [NSURL fileURLWithPath:path];
+        fileURL = [NSURL fileURLWithPath:pathAdapted];
         
         localFile = fileURL.path;
 
